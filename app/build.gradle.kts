@@ -5,14 +5,6 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        create("release") {
-            storeFile = file("neilsapno")
-            storePassword = "D4lv1kVM"
-            keyAlias = "neilsapno"
-            keyPassword = "D4lv1kVM"
-        }
-    }
     namespace = "sapno.cedric.onesticompanion"
     compileSdk = 35
 
@@ -24,8 +16,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        proguardFiles("proguard-rules.pro")
-        signingConfig = signingConfigs.getByName("release")
+        signingConfig = signingConfigs.getByName("debug")
     }
 
     buildTypes {
@@ -34,7 +25,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("debug")
             isMinifyEnabled = true
         }
     }

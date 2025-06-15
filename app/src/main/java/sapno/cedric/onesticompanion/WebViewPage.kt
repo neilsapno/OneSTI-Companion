@@ -20,10 +20,10 @@ import androidx.compose.web.MiCode.MiCode
 
 @Composable
 fun WebViewPage(
+    modifier: Modifier = Modifier,
     webViewController: WebViewController,
     initialUrl: String,
     injectedJavaScript: String? = null,
-    modifier: Modifier = Modifier,
     onPageFinished: ((String) -> Unit)? = null
 ) {
     var progress by remember { mutableStateOf(0) }
